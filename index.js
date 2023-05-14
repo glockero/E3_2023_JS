@@ -50,7 +50,7 @@ const pizzas = [
     const input = document.querySelector(".imput")
     const formulario = document.querySelector("add-form")
     const card_comida = document.querySelector("card_comida")
-    let ids = JSON.parse(localStorage.getItem("id"))
+    let ids = JSON.parse(localStorage.getItem) || []
 
     const init = () => {
 

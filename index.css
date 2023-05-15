@@ -10,6 +10,9 @@ body {
 
 }
 
+.none {
+  visibility: hidden;
+}
 .formulario-busqueda{
   display: flex;
   align-items: center;

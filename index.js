@@ -47,10 +47,16 @@ const pizzas = [
   ];
 
   
-    const input = document.querySelector(".imput")
-    const formulario = document.querySelector("add-form")
-    const card_comida = document.querySelector("card_comida")
-    let ids = JSON.parse(localStorage.getItem) || []
+    const input = document.querySelector(".imput");
+    const formulario = document.querySelector("add-form");
+    const card_comida = document.querySelector("card_comida");
+    let id = JSON.parse(localStorage.getItem("id")) || [];
+
+    const saveLocalStorage = (id) => {
+        localStorage.setItem("id", JSON.stringify(id))
+    }
+
+   card_comida.classList.add = "none"
 
     const init = () => {
 

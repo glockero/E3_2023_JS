@@ -22,10 +22,12 @@ body {
 }
 
 .todo-container {
+  width:600px ;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   padding: 4rem;
+  justify-items: center;
 }
 
 .todo-container button {
@@ -42,14 +44,17 @@ body {
 
 .add-form {
   display: flex;
+  flex-direction: column;
   gap: 2rem;
   flex-wrap: wrap;
+  width:700px ;
+  justify-content: center;
 }
 
 .input-container {
   display: flex;
-  flex-wrap: wrap;
- 
+justify-items: center;
+  width:400px ;
 }
 
 .input {
@@ -81,6 +86,7 @@ body {
 }
 
 .add-btn {
+ 
   background: #282828;
   outline: none;
   border: 0px solid;
@@ -89,6 +95,7 @@ body {
   font-size: 13px;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ 
 }
 
 

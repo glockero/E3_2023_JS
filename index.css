@@ -63,6 +63,7 @@ body {
   color: white;
   padding-left: 5px;
   width: 600px;
+  appearance: none;
   
 
 }
@@ -114,18 +115,14 @@ body {
   display: flex;
   flex-direction: column;
   width: 282px;
-  height: 213px;
+  height: 400px;
   background-color: #252525;
   border-radius: 15px;
   justify-content: space-between;
   padding: 16px;
 }
 
-.size_img {
-  width: 237px;
-  height: 97px;
-  border-radius: 15px;
-}
+
 
 .imagen_comida {
   background-image: url(/imagens_cards_gus/Photo\ Menu.png);
@@ -150,6 +147,13 @@ body {
   background-color: #252525;
   display: flex;
   justify-content: space-between;
+}
+
+.mensaje_error  {
+  font-family: "Montserrat";
+  color: crimson;
+  font-size: 18px;
+  text-align: left;
 }
 
 .precio_boton h2 {

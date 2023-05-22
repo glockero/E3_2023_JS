@@ -50,28 +50,23 @@ const pizzas = [
 
     const input = document.querySelector(".input");
     const formulario = document.querySelector(".add-form");
-    const card_comida = document.getElementById("card");
     const contenedorCards = document.getElementById("cont_cards")
     const div_message = document.getElementById("message")
 
     // FUNCION QUE RECUPERA DEL LOCAL STORAGE
     let lastID = JSON.parse(localStorage.getItem("id")) || "";
     
-
-
     // FUNCION QUE GUARDA EN LOCAL STORAGE
 
     const saveLocalStorage = (id) => {
         localStorage.setItem("id", JSON.stringify(id))
     }
 
-
      
-//FUNCION PARA CORREGIR LOS DATOS DEL INPUT     
+//FUNCION PARA CORREGIR LOS DATOS DEL INPUT, QUITA ESPACION
 const correctImput = () =>{
   return Number(input.value.trim().replace(/\s+/g, " "))
 }
-
 
 
 // BUSQUEDA DEL ID DE PIZZA 
@@ -83,45 +78,42 @@ return arraypizzas;
 
 
 //FUNCION QUE PREVIENE EL SUBMIT Y GUARDA EL VALOR
+
 const sub = (e) =>{
 e.preventDefault();
 const ValueInput = correctImput()
-isEmpty()
+
 IDisBetween()
-saveLocalStorage(Number(ValueInput))
-createCard(InfoPizzaToShow(Number(ValueInput)))
-console.log(correctImput());
+saveLocalStorage(ValueInput)
+createCard(InfoPizzaToShow(ValueInput))
+console.log(typeof correctImput());
+console.log(typeof ValueInput);
 formulario.reset()
 }
 
-// FUNCION PARA VERIFICAR SI LA
-const isEmpty = ()=>{
-if (correctImput() == 0) {
-  return contenedorCards.classList.add("none")
-}
-return contenedorCards.classList.remove("none")
-}
 
 // FUNCION PARA VERIFICAR QUE EL RANGO ESTE ENTRE 1 Y 5
 
 const IDisBetween = ()=> {
-
+let value = true
 if (correctImput() > 5) {
-  contenedorCards.classList.add("none")
-  contenedorCards.innerHTML = " "
-  formulario.reset()
+    contenedorCards.innerHTML = " "
+    formulario.reset()
   div_message.innerHTML =
   
     `<div id="message">
       <h4  class="mensaje_error">INGRESE UN VALOR ENTRE 1 Y 5</h4>
       </div>`
+      return false
+     
 } 
 else {
+   console.log(correctImput());
   div_message.innerHTML = ""
 }
 
 if (correctImput() < 1) {
-  contenedorCards.classList.add("none")
+ 
   contenedorCards.innerHTML = " "
   formulario.reset()
   div_message.innerHTML =
@@ -129,22 +121,20 @@ if (correctImput() < 1) {
     `<div id="message">
       <h4  class="mensaje_error">INGRESE UN VALOR ENTRE 1 Y 5</h4>
       </div>`
+      
 } 
 else {
+
+  console.log(correctImput());
   div_message.innerHTML = ""
 }
 
 }
 //-------------------------------------------------^
 
-
-
-
-
-     //FUNCION PARA CREAR LA CARD CON LA INFO DE LA PIZZA
+//FUNCION PARA CREAR LA CARD CON LA INFO DE LA PIZZA
 
 const createCard = (info) => {
-  
   
   contenedorCards.innerHTML =
 
@@ -163,8 +153,9 @@ const createCard = (info) => {
     </div>
     
   </div>`
- 
 }
+
+  
 
 //------------------------------------------------------------------------------
 
